@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: creating ec2 instances
+      ec2:
+        image: ami-0b898040803850657
+        instance_type: t2.micro
+        key_name: dhashu
+        count: 3
+        group: launch-wizard-1
+        instance_tags:
+          name: elk stack
+        assign_public_ip: yes
+        region: us-east-1
+        vpc_subnet_id: subnet-e9f49c8e
+
+
+#lkvnsdlkvnsdn
